@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Love World</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Music -->
+  <audio id="romantic-music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Home Page -->
+  <div class="container active" id="home">
+    <h1>Welcome to Love World</h1>
+    <p>Will you be my valentine, my sunshine?</p>
+    <div class="button-group">
+      <button onclick="handleChoice('no')">No</button>
+      <button onclick="handleChoice('yes')">Yes</button>
+    </div>
+  </div>
+
+  <!-- Wrong Choice Page -->
+  <div class="container" id="wrong">
+    <h2>Oops! You clicked the wrong option by mistake. Try again!</h2>
+    <div class="button-group">
+      <button onclick="handleChoice('no')">No</button>
+      <button onclick="handleChoice('yes')">Yes</button>
+    </div>
+  </div>
+
+  <!-- Final Page -->
+  <div class="container" id="final">
+    <h2 class="final-message">Thank you for saying yes! ❤️ You are my forever valentine!</h2>
+    <p class="surprise-text">P.S. Look at all these hearts and petals—each one is a little piece of my love for you!</p>
+    <button onclick="showPoemPage()">View Poem</button>
+    <div id="hearts-container"></div>
+  </div>
+
+  <!-- Poem Page -->
+  <div class="container" id="poem">
+    <h2 class="poem-title">A Special Poem Just for You</h2>
+    <p class="poem">
+      Roses are red, violets are blue,<br>
+      My world is brighter, all because of you.<br>
+      You light up my heart, you make my soul sing,<br>
+      With you by my side, I can do anything.<br><br>
+      Here’s to the moments, the laughter, the cheer,<br>
+      To our endless love, my Valentine dear.<br>
+      Always and forever, you’ll stay in my heart,<br>
+      From this very moment, we’ll never be apart.<br>
+    </p>
+    <button onclick="showPlanPage()">Let's Plan Our Day</button>
+  </div>
+
+  <!-- Plan Form Page -->
+  <div class="container" id="plan">
+    <h2 class="form-heading">Let's Plan Our Special Day</h2>
+    <form id="planForm">
+      <div class="form-group">
+        <label>Choose a sweet nickname for our day:</label><br>
+        <input type="radio" id="nick_honey" name="nickname" value="Honey">
+        <label for="nick_honey">Honey</label>
+        <input type="radio" id="nick_mylove" name="nickname" value="My Love">
+        <label for="nick_mylove">My Love</label>
+        <input type="radio" id="nick_baby" name="nickname" value="Baby">
+        <label for="nick_baby">Baby</label><br>
+        <label for="customNickname">Or enter your own nickname:</label>
+        <input type="text" id="customNickname" name="customNickname" placeholder="Enter nickname">
+      </div>
+
+      <div class="form-group">
+        <label for="meetPlace">Where shall we meet?</label>
+        <input type="text" id="meetPlace" name="meetPlace" placeholder="Enter meeting place">
+      </div>
+
+      <div class="form-group">
+        <label for="meetTime">What time?</label>
+        <input type="time" id="meetTime" name="meetTime">
+      </div>
+
+      <div class="form-group">
+        <label for="favColor">What's your favorite color?</label>
+        <input type="text" id="favColor" name="favColor" placeholder="Enter your favorite color">
+      </div>
+
+      <div class="form-group">
+        <label>What should we carry?</label><br>
+        <input type="checkbox" id="carry_roses" name="carry" value="Roses">
+        <label for="carry_roses">Roses</label>
+        <input type="checkbox" id="carry_chocolates" name="carry" value="Chocolates">
+        <label for="carry_chocolates">Chocolates</label>
+        <input type="checkbox" id="carry_teddy" name="carry" value="Teddy Bear">
+        <label for="carry_teddy">Teddy Bear</label>
+        <input type="checkbox" id="carry_all" name="carry" value="All of the above">
+        <label for="carry_all">All of the above</label>
+      </div>
+
+      <button type="submit">Plan My Day!</button>
+    </form>
+    <div id="planResult" style="margin-top: 20px;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
